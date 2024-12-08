@@ -5,11 +5,11 @@ import matplotlib.pyplot as plt
 st.set_page_config(page_title="Simple Dashboard", layout="wide")
 
 with st.sidebar:
-    selected_option = st.radio("Selected and option:", [1, 2])
+    selected_option = st.radio("Selected and Option:", ["Upload CSV Preview", "Sample Data Preview"])
 
 st.title("Simple Streamlit Dashboard")
 
-if selected_option == 1:
+if selected_option == "Upload CSV Preview":
     st.header("Option 1: Upload CSV and Plot Data")
 
     uploaded_file = st.file_uploader("Choose a CSV file to upload", type="csv")
@@ -37,7 +37,7 @@ if selected_option == 1:
     else:
         st.warning("Please upload a CSV file to display and plot the data.")
 
-elif selected_option == 2:
+elif selected_option == "Sample Data Preview":
     st.header("Display Sample Data and Plot")
 
     st.subheader("Sample Data Preview")
